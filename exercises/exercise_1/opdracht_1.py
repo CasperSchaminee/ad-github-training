@@ -5,10 +5,7 @@ def likes(team: list) -> str:
         return f"{team[0]} likes this"
     elif len(team) == 2:
         return f"{team[0]} and {team[1]} like this"
-    else:
-        # Voor 3 of meer namen: alle namen behalve de laatste twee gescheiden door komma's
-        # De laatste twee namen gescheiden door " and "
-        names_except_last = ", ".join(team[:-1])
-        return f"{names_except_last} and {team[-1]} like this"
-
-
+    elif len(team) == 3:
+        return f"{team[0]}, {team[1]} and {team[2]} like this"
+    elif len(team) >= 3:
+        return f"{team[0]}, {team[1]} and {len(team)-2} others like this"
